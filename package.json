@@ -1,7 +1,7 @@
 {
   "name": "commonform-regexp-annotator",
   "description": "create Common Form annotators from lists of regular expressions",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com)",
   "devDependencies": {
     "defence-cli": "1.x",
