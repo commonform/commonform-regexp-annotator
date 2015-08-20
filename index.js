@@ -1,5 +1,4 @@
 var predicate = require('commonform-predicate')
-var name = require('./package').name
 
 function rule(expressions, annotator, form, path)
 { return form.content
@@ -12,7 +11,7 @@ function rule(expressions, annotator, form, path)
               var match = expression.exec(element)
               if (match !== null) {
                 annotations.push(
-                  message(form, elementPath, expression, match)) } }) }
+                  annotator(form, elementPath, expression, match)) } }) }
         return annotations },
       [ ]) }
 
