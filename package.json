@@ -1,0 +1,28 @@
+{
+  "name": "commonform-regexp-annotator",
+  "description": "create Common Form annotators from lists of regular expressions",
+  "version": "0.0.0",
+  "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com)",
+  "devDependencies": {
+    "defence-cli": "1.x",
+    "replace-require-self": "1.x"
+  },
+  "keywords": [
+    "contracts",
+    "document assembly",
+    "knowledge management",
+    "law",
+    "markup"
+  ],
+  "license": "Apache-2.0",
+  "peerDependencies": {
+    "commonform": "1.x"
+  },
+  "repository": "commonform/commonform-regexp-annotator",
+  "scripts": {
+    "test": "defence README.md | replace-require-self | node"
+  },
+  "dependencies": {
+    "commonform-predicate": "^0.4.0"
+  }
+}
