@@ -4,7 +4,7 @@ Include capture groups and flags in your `RegExp` as needed to match and generat
 
 ```javascript
 var expressions = [
-  new RegExp('\\b(apple)\\b', 'i'),
+  new RegExp('\\b(apple(s?))\\b', 'gi'),
   /\b(thereof)\b/ ]
 ```
 
@@ -15,7 +15,7 @@ function message(form, path, expression, match) {
   var word = match[1]
   return {
     message: (
-      match[1] === 'apple' ?
+      ( match[1].indexOf('apple') > -1 ) ?
         ( '"' + word + '" is fruity' ) :
         ( '"' + word + '" is archaic' ) ),
     path: path,
@@ -33,8 +33,12 @@ The library does the job of finding matches and calculating paths.
 var assert = require('assert')
 
 assert.deepEqual(
-  annotator({ content: [ 'Drop that apple and the stem thereof!' ] }),
-  [ { message: '"apple" is fruity',
+  annotator({ content: [ 'Drop them apples and the apple stem thereof!' ] }),
+  [ { message: '"apples" is fruity',
+      path: [ 'content', 0 ],
+      source: 'example-annotator',
+      url: null },
+    { message: '"apple" is fruity',
       path: [ 'content', 0 ],
       source: 'example-annotator',
       url: null },

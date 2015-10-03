@@ -8,10 +8,16 @@ function rule(expressions, annotator, form, path)
           var elementPath = path.concat([ 'content', index ])
           expressions
             .forEach(function(expression) {
-              var match = expression.exec(element)
-              if (match !== null) {
-                annotations.push(
-                  annotator(form, elementPath, expression, match)) } }) }
+              var match
+              if (expression.global) {
+                while ((match = expression.exec(element)) !== null) {
+                  annotations.push(
+                    annotator(form, elementPath, expression, match)) } }
+              else {
+                match = expression.exec(element)
+                if (match !== null) {
+                  annotations.push(
+                    annotator(form, elementPath, expression, match)) } } }) }
         return annotations },
       [ ]) }
 
