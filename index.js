@@ -1,5 +1,11 @@
 var predicate = require('commonform-predicate')
 
+module.exports = function (expressions, annotator) {
+  return function (form) {
+    return recurse(expressions, annotator, form, [], [])
+  }
+}
+
 function rule (expressions, annotator, form, path) {
   return form.content.reduce(function (annotations, element, index) {
     if (predicate.text(element)) {
@@ -46,11 +52,3 @@ function recurse (expressions, annotator, form, path, annotations) {
     }, [])
   )
 }
-
-function commonformRegExpAnnotator (expressions, annotator) {
-  return function (form) {
-    return recurse(expressions, annotator, form, [], [])
-  }
-}
-
-module.exports = commonformRegExpAnnotator
