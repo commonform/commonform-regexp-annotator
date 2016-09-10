@@ -1,6 +1,9 @@
-The module exports a single function that takes an array of `RegExp` and a function for generating annotations and returns an annotator function to apply to Common Forms.
+The module exports a single function that takes an array of `RegExp`
+and a function for generating annotations and returns an annotator
+function to apply to Common Forms.
 
-Include capture groups and flags in your `RegExp` as needed to match and generate annotation messages.
+Include capture groups and flags in your `RegExp` as needed to match
+and generate annotation messages.
 
 ```javascript
 var expressions = [
@@ -9,7 +12,12 @@ var expressions = [
 ]
 ```
 
-The annotation function receives the form in which a `RegExp` was found, its path within the overall form, the `RegExp` that matches, and the match data from `RegeExp.prototype.exec`. It must return a [Common Form Annotations](https://npmjs.com/packages/commonform-annotation).
+The annotation function receives the form in which a `RegExp` was
+found, its path within the overall form, the `RegExp` that matches,
+and the match data from `RegeExp.prototype.exec`. It must return a
+[Common Form Annotations][annotation]
+
+[annotation]: https://npmjs.com/packages/commonform-annotation)
 
 ```javascript
 function message(form, path, expression, match) {
@@ -37,7 +45,9 @@ The library does the job of finding matches and calculating paths.
 var assert = require('assert')
 
 assert.deepEqual(
-  annotator({ content: ['Drop them apples and the apple stem thereof!']}),
+  annotator({
+    content: ['Drop them apples and the apple stem thereof!']
+  }),
   [
     {
       message: '"apples" is fruity',
