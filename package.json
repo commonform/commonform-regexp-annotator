@@ -5,7 +5,8 @@
   "author": "Kyle E. Mitchell <kyle@kemitchell.com> (http://kemitchell.com)",
   "devDependencies": {
     "defence-cli": "1.x",
-    "replace-require-self": "1.x"
+    "replace-require-self": "1.x",
+    "standard": "^8.0.0"
   },
   "keywords": [
     "contracts",
@@ -17,7 +18,8 @@
   "license": "Apache-2.0",
   "repository": "commonform/commonform-regexp-annotator",
   "scripts": {
-    "test": "defence README.md | replace-require-self | node"
+    "test": "defence README.md | replace-require-self | node",
+    "lint": "standard"
   },
   "dependencies": {
     "commonform-predicate": "^0.4.0"
