@@ -26,6 +26,6 @@
     "lint": "standard && standard-markdown"
   },
   "dependencies": {
-    "commonform-predicate": "^0.4.0"
+    "commonform-predicate": "^3.0.1"
   }
 }
