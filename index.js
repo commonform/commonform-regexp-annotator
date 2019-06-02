@@ -34,21 +34,21 @@ function rule (expressions, annotator, form, path) {
 
 function recurse (expressions, annotator, form, path, annotations) {
   return annotations
-  .concat(rule(expressions, annotator, form, path))
-  .concat(
-    form.content.reduce(function (annotations, element, index) {
-      if (predicate.child(element)) {
-        var childForm = element.form
-        var childPath = path.concat(['content', index, 'form'])
-        return annotations.concat(
-          recurse(
-            expressions, annotator,
-            childForm, childPath, []
+    .concat(rule(expressions, annotator, form, path))
+    .concat(
+      form.content.reduce(function (annotations, element, index) {
+        if (predicate.child(element)) {
+          var childForm = element.form
+          var childPath = path.concat(['content', index, 'form'])
+          return annotations.concat(
+            recurse(
+              expressions, annotator,
+              childForm, childPath, []
+            )
           )
-        )
-      } else {
-        return annotations
-      }
-    }, [])
-  )
+        } else {
+          return annotations
+        }
+      }, [])
+    )
 }
