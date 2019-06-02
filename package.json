@@ -6,7 +6,8 @@
   "devDependencies": {
     "defence-cli": "^3.0.1",
     "replace-require-self": "1.x",
-    "standard": "^12.0.1"
+    "standard": "^12.0.1",
+    "standard-markdown": "^5.0.1"
   },
   "keywords": [
     "contracts",
@@ -22,7 +23,7 @@
   "repository": "commonform/commonform-regexp-annotator",
   "scripts": {
     "test": "defence README.md | replace-require-self | node",
-    "lint": "standard"
+    "lint": "standard && standard-markdown"
   },
   "dependencies": {
     "commonform-predicate": "^0.4.0"

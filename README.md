@@ -22,13 +22,13 @@ and the match data from `RegeExp.prototype.exec`. It must return a
 [annotation]: https://npmjs.com/packages/commonform-annotation)
 
 ```javascript
-function message(form, path, expression, match) {
+function message (form, path, expression, match) {
   var word = match[1]
   return {
     message: (
       match[1].indexOf('apple') > -1
-      ? ('"' + word + '" is fruity')
-      : ('"' + word + '" is archaic')
+        ? ('"' + word + '" is fruity')
+        : ('"' + word + '" is archaic')
     ),
     path: path,
     source: 'example-annotator',
@@ -46,7 +46,7 @@ The library does the job of finding matches and calculating paths.
 ```javascript
 var assert = require('assert')
 
-assert.deepEqual(
+assert.deepStrictEqual(
   annotator({
     content: ['Drop them apples and the apple stem thereof!']
   }),
