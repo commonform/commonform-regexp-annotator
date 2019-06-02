@@ -1,3 +1,5 @@
+# commonform-regexp-annotator
+
 The module exports a single function that takes an array of `RegExp`
 and a function for generating annotations and returns an annotator
 function to apply to Common Forms.
